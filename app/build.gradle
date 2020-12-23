@@ -14,6 +14,8 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
+        vectorDrawables.useSupportLibrary = true // This line here
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -43,6 +45,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-storage'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 apply plugin: 'com.huawei.agconnect'
 apply plugin: 'com.android.application'
