@@ -1,16 +1,18 @@
 package com.example.sattimcom;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,6 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignUpActivity.this, FeedActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -75,10 +78,20 @@ public class SignUpActivity extends AppCompatActivity {
         String password = passwordText.getText().toString();
 
 
+
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                FirebaseUser firebaseUser = auth.getCurrentUser();
 
+                firebaseUser.sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                            }
+                        });
                 Toast.makeText(SignUpActivity.this,"User Created",Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(SignUpActivity.this,FeedActivity.class);
