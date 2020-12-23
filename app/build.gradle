@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
 apply plugin: 'com.huawei.agconnect'
 apply plugin: 'com.android.application'
