@@ -15,6 +15,7 @@ android {
         multiDexEnabled true
 
         vectorDrawables.useSupportLibrary = true // This line here
+        vectorDrawables.useSupportLibrary = true // This line here
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
