@@ -1,8 +1,4 @@
 {
-	"agcgw":{
-		"backurl":"connect-dre.dbankcloud.cn",
-		"url":"connect-dre.hispace.hicloud.com"
-	},
 	"client":{
 		"appType":"1",
 		"cp_id":"5190090000027635126",
@@ -14,22 +10,5 @@
 		"api_key":"CgB6e3x9bgBK5Fx4uHN2PoPJUi0bPTYKvGbhDtnMaAccJ5IlLxw7+qxAi4mbh7Ufy6aCyCD34OOUywBNyDrH+vJt",
 		"package_name":"com.example.sattimcom"
 	},
-	"service":{
-		"analytics":{
-			"collector_url":"datacollector-dre.dt.hicloud.com,datacollector-dre.dt.dbankcloud.cn",
-			"resource_id":"p1",
-			"channel_id":""
-		},
-		"search":{
-			"url":"https://search-dre.cloud.huawei.com"
-		},
-		"cloudstorage":{
-			"storage_url":"https://ops-dre.agcstorage.link"
-		},
-		"ml":{
-			"mlservice_url":"ml-api-dre.ai.dbankcloud.com,ml-api-dre.ai.dbankcloud.cn"
-		}
-	},
-	"region":"DE",
 	"configuration_version":"1.0"
 }

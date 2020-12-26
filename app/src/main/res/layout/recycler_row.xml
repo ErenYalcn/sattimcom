@@ -8,7 +8,8 @@
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="@dimen/activity_vertical_margin"
-    app:cardElevation="@dimen/activity_vertical_margin">
+    app:cardElevation="@dimen/activity_vertical_margin"
+    android:background="#f4f4f4">
 
 
 
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/emailText"
             android:text="comment"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="30dp"
 
             android:layout_toRightOf="@+id/imageView"
              />
