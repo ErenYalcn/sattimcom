@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,13 +28,14 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class FeedActivity extends AppCompatActivity {
-
+    Button buttonDetail;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
     ArrayList<String> userEmailFromFB;
     ArrayList<String> userCommentFromFB;
     ArrayList<String> userImageFromFB;
     FeedRecyclerAdapter feedRecyclerAdapter;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,6 +79,7 @@ public class FeedActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         getDataFromFirestore();
+        buttonDetail = findViewById(R.id.buttonDetail);
 
 
         //RecyclerView
@@ -85,6 +89,10 @@ public class FeedActivity extends AppCompatActivity {
         feedRecyclerAdapter = new FeedRecyclerAdapter(userEmailFromFB,userCommentFromFB,userImageFromFB);
         recyclerView.setAdapter(feedRecyclerAdapter);
 
+    }
+    public void onClick(View view){
+        Intent i = new Intent(FeedActivity.this,DetailActivity.class);
+        startActivity(i);
     }
 
 
