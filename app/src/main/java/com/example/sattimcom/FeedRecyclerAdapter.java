@@ -57,7 +57,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         return userEmailList.size();
     } //liste boyutunu döndürür.
 
-    class PostHolder extends RecyclerView.ViewHolder {
+    static class PostHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
         TextView userEmailText;

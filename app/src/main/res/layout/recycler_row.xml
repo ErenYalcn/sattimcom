@@ -22,8 +22,8 @@
 
         <ImageView
             android:id="@+id/recyclerview_row_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="678px"
+            android:layout_height="452px"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:foregroundGravity="center"
