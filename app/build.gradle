@@ -52,6 +52,7 @@ dependencies {
     implementation 'androidx.cardview:cardview: 1.0.0'
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
     implementation 'com.huawei.agconnect:agconnect-applinking:1.4.2.301'
+    implementation 'com.huawei.hms:ads-lite:13.4.37.300'
 
 }
 apply plugin: 'com.huawei.agconnect'

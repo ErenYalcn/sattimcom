@@ -7,6 +7,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.banner.BannerView;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -35,6 +41,8 @@ public class FeedActivity extends AppCompatActivity {
     ArrayList<String> userCommentFromFB;
     ArrayList<String> userImageFromFB;
     FeedRecyclerAdapter feedRecyclerAdapter;
+
+
 
 
     @Override
@@ -66,6 +74,7 @@ public class FeedActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +97,16 @@ public class FeedActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedRecyclerAdapter = new FeedRecyclerAdapter(userEmailFromFB,userCommentFromFB,userImageFromFB);
         recyclerView.setAdapter(feedRecyclerAdapter);
+
+        HwAds.init(this);
+        BannerView bannerView = findViewById(R.id.hw_banner_view);
+        // Set the ad slot ID and ad size. "testw6vs28auh3" is a dedicated test ad slot ID.
+        bannerView.setAdId("testw6vs28auh3");
+        bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
+        // Create an ad request to load an ad.
+        AdParam adParam = new AdParam.Builder().build();
+        bannerView.loadAd(adParam);
+
 
     }
     public void onClick(View view){
