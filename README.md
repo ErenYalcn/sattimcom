@@ -1,4 +1,4 @@
-<img src="https://github.com/ErenYalcn/sattimcom/app/src/main/res/drawable/sattimcomcom.jpg" align="right" style="height: 64px"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/sattimcomcom.jpg" align="right" style="height: 64px"/>
 
 # Sattım
 Android ortamı için geliştirilen online araç satış platformu
