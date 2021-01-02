@@ -48,3 +48,13 @@ Uygulamamıza **AppGallery** üzerinden ulaşmak için;
 
 # Projeyle ilgili Ekran Görüntüleri
 
+<p float="left">
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/ss1.jpg" width="200" />
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/ss2.jpg" width="200"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/ss3.jpg" width="200"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/ss4.jpg" width="200"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/ss5.jpg" width="200"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/sattimpushkit.png" width="200"/>
+<img src="https://github.com/ErenYalcn/sattimcom/blob/master/app/src/main/res/drawable/mailauth.jpeg" width="200"/>
+</p>
+
