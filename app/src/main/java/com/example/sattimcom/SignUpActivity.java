@@ -92,24 +92,28 @@ public class SignUpActivity extends AppCompatActivity {
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
+        if (emailText.getText().toString().trim().equals("") && passwordText.getText().toString().trim().equals("")) {
+            Toast.makeText(SignUpActivity.this, "Email ve Şifre Girin!", Toast.LENGTH_SHORT).show();
+        } else {
 
-        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
+            firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                @Override
+                public void onSuccess(AuthResult authResult) {
 
-                Intent intent = new Intent(SignUpActivity.this, FeedActivity.class);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(SignUpActivity.this, FeedActivity.class);
+                    startActivity(intent);
+                    finish();
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignUpActivity.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
-            }
-        });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(SignUpActivity.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                }
+            });
 
 
+        }
     }
 
     public void signUpClicked (View view) {
@@ -118,36 +122,38 @@ public class SignUpActivity extends AppCompatActivity {
         String password = passwordText.getText().toString();
 
 
+        if (emailText.getText().toString().trim().equals("") && passwordText.getText().toString().trim().equals("")) {
+            Toast.makeText(SignUpActivity.this, "Email ve Şifre Girin!", Toast.LENGTH_SHORT).show();
+        } else {
+            firebaseAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                @Override
+                public void onSuccess(AuthResult authResult) {
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    FirebaseUser firebaseUser = auth.getCurrentUser();
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                FirebaseAuth auth = FirebaseAuth.getInstance();
-                FirebaseUser firebaseUser = auth.getCurrentUser();
+                    firebaseUser.sendEmailVerification()
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
 
-                firebaseUser.sendEmailVerification()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
+                                }
+                            });
+                    Toast.makeText(SignUpActivity.this, "User Created", Toast.LENGTH_LONG).show();
 
-                            }
-                        });
-                Toast.makeText(SignUpActivity.this,"User Created",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(SignUpActivity.this, FeedActivity.class);
+                    startActivity(intent);
+                    finish();
 
-                Intent intent = new Intent(SignUpActivity.this,FeedActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignUpActivity.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
-            }
-        });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(SignUpActivity.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                }
+            });
 
 
-
+        }
     }
 
 

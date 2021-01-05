@@ -88,7 +88,7 @@ public class FeedActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         getDataFromFirestore();
-        buttonDetail = findViewById(R.id.buttonDetail);
+
 
 
         //RecyclerView
@@ -109,10 +109,7 @@ public class FeedActivity extends AppCompatActivity {
 
 
     }
-    public void onClick(View view){
-        Intent i = new Intent(FeedActivity.this,DetailActivity.class);
-        startActivity(i);
-    }
+
 
 
     public void getDataFromFirestore() {

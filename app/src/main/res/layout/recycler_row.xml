@@ -59,12 +59,7 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/buttonDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="İlan Detayı" />
+
 
 
 </LinearLayout>
